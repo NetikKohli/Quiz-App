@@ -58,7 +58,7 @@ const progressBar = document.getElementById("progress-bar");
 
 function startQuiz() {
     score = 0;
-    randomQues()
+    randomQues() 
     let title=document.createElement('div')
     document.getElementById('time-left-badge').style.display='none'
     let head=document.querySelector('#header>h2')
