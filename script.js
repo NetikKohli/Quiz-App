@@ -69,6 +69,7 @@ function startQuiz() {
 
     let start=document.createElement('div')
     start.style.width='25rem'
+    start.style.height='20rem'
     start.style.backgroundColor='' 
     start.style.boxShaddow='2px 2px 30px'
     questionElement.append(start)
@@ -262,8 +263,6 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-restartButton.addEventListener("click",()=>{ 
-    questionElement.innerHTML=""
-    startQuiz()});
+restartButton.addEventListener("click",()=>location.reload());
 
 startQuiz();
