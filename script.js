@@ -188,6 +188,8 @@ function markAnswer(isCorrect,val) {
 function showScore() {
     resetState()
     document.querySelector('#time-left-badge').style.display='none'
+    document.querySelector('#questions-left').style.display='none'
+    
     let ind=0;
     let top=document.querySelector('#header>h2')
     top.innerHTML='Quiz Result'
@@ -221,6 +223,7 @@ function showScore() {
          questionElement.append(q,el)
     })
     let scr=document.createElement('div')
+    scr.style.color='blue'
     scr.innerHTML=`<br>You scored ${score} out of ${questions.length}!`
     questionElement.appendChild(scr)
     console.log(userAns)
