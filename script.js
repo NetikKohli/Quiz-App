@@ -70,7 +70,6 @@ function startQuiz() {
     let start=document.createElement('div')
     start.style.width='25rem'
     start.style.backgroundColor='' 
-    start.style.height='25rem'
     start.style.boxShaddow='2px 2px 30px'
     questionElement.append(start)
     start.style.display='flex'
