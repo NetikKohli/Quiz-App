@@ -110,7 +110,7 @@ function showQuestion() {
         button.addEventListener("click",()=>{ 
             if(!answer.correct){
             button.classList.add('incorrect') 
-            button.innerHTML += ' <img src="incorrect.png" width="20em"></img>';
+            button.innerHTML += ' <img src="incorrect.png"  width="20em"></img>';
             }
             selectAnswer(answer.correct,answer.text)});
         answerButtons.appendChild(button);
