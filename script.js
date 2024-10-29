@@ -107,7 +107,12 @@ function showQuestion() {
         button.innerText = answer.text;
         button.classList.add("btn");
         if (answer.correct) button.dataset.correct = answer.correct;
-        button.addEventListener("click",()=>{selectAnswer(answer.correct,answer.text)});
+        button.addEventListener("click",()=>{ 
+            if(!answer.correct){
+            button.classList.add('incorrect') 
+            button.innerHTML += ' <img src="incorrect.png" width="20em"></img>';
+            }
+            selectAnswer(answer.correct,answer.text)});
         answerButtons.appendChild(button);
     });
     
@@ -153,20 +158,21 @@ function markAnswer(isCorrect,val) {
     else
         userAns.push(val)
         
-
+    
     Array.from(answerButtons.children).forEach(button => {
         const isButtonCorrect = button.dataset.correct === "true";
-
-           button.classList.add(isButtonCorrect?'correct':'incorrect');
+        if(isButtonCorrect)
+           button.classList.add('correct');
         button.disabled = true;
         
         if (isButtonCorrect) {
             button.innerHTML += ' <img src="check.png" width="20em"></img>'; // Check icon
-        } else {
-            button.innerHTML += ' <img src="incorrect.png" width="20em"></img>'; // Times icon
-        }
+        } 
+        else 
+           button.classList.add('notSelect')
+        
     });
-    
+    setTimeout(100000)
     nextButton.classList.remove("hide");
     
     nextQuestionTimeout = setTimeout(() => {
