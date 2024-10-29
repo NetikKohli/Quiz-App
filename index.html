@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="quiz-container">
+        
+        <div id="header">
+            <h2></h2>
+            <div id="time-left-badge">
+                Time Left : <span id="time"></span>
+            </div>
+        </div>
+        <div id="progress-container">
+            <div id="progress-bar" style="width: 0%;"></div>
+        </div>
+        <div id="question-container">
+            <p id="question"><p>
+            <div id="answer-buttons" class="btn-container"></div>
+        </div>
+        <div id="footer">
+            <p id="questions-left"></p>
+            <button id="next-btn" class="next-button hide">Next Question</button>
+        </div>
+        <div id="result-container" class="hide">
+            <p>Your Score: <span id="score">0</span></p>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
