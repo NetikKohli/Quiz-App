@@ -58,6 +58,7 @@ const progressBar = document.getElementById("progress-bar");
 
 function startQuiz() {
     score = 0;
+    randomQues()
     let title=document.createElement('div')
     document.getElementById('time-left-badge').style.display='none'
     let head=document.querySelector('#header>h2')
@@ -94,6 +95,16 @@ function startQuiz() {
     img.addEventListener('click',showQuestion)
 }
 
+function randomQues() {
+    const shuffled = [];
+    while (questions.length > 0) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        shuffled.push(questions[randomIndex]);
+        questions.splice(randomIndex, 1);
+    }
+    for(let i=0;i<shuffled.length;i++)
+         questions[i]=shuffled[i];
+}
 function showQuestion() {
     resetState();
     document.getElementById('time-left-badge').style.display='inline-block'
@@ -252,6 +263,8 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-restartButton.addEventListener("click", startQuiz);
+restartButton.addEventListener("click",()=>{ 
+    questionElement.innerHTML=""
+    startQuiz()});
 
 startQuiz();
